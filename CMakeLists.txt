@@ -15,6 +15,7 @@ enable_testing()
 
 set(SOURCES
     src/game.cpp
+    src/player.cpp
     src/main.cpp
 )
 

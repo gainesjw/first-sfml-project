@@ -2,6 +2,7 @@
 #define __GAME_H__
 
 #include <SFML/Graphics.hpp>
+#include "player.h"
 
 namespace Game
 {
@@ -14,7 +15,7 @@ namespace Game
         void render();
 
         sf::RenderWindow _window;
-        sf::CircleShape  _player;
+        Player::Player  _player;
 
     public:
         Game(const Game&) = delete;
