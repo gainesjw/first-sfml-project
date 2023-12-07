@@ -5,6 +5,8 @@
 int main()
 {
 
+    Player::Player::setDefaultInputs();
+
     Game::Game Game;
     Game.run(30);
 

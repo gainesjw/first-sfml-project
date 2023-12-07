@@ -24,6 +24,7 @@ namespace Game
         void run(int minimum_frame_per_seconds);
 
     };    
+
 }
 
 #endif
