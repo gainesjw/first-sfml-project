@@ -5,7 +5,7 @@
 int main()
 {
 
-    Player::Player::setDefaultInputs();
+    Configuration::Configuration::initialize();
 
     Game::Game Game;
     Game.run(30);

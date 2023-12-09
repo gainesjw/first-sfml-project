@@ -15,9 +15,11 @@ enable_testing()
 
 set(SOURCES
     src/action.cpp
+    src/configuration.cpp
     src/game.cpp
     src/player.cpp
     src/main.cpp
+
 )
 
 add_executable(project_001 ${SOURCES})
@@ -25,6 +27,7 @@ add_executable(project_001 ${SOURCES})
 target_link_libraries(project_001 PRIVATE sfml-graphics)
 target_compile_features(project_001 PRIVATE cxx_std_17)
 target_include_directories(project_001 PRIVATE ${PROJECT_SOURCE_DIR}/include)
+file(COPY ${PROJECT_SOURCE_DIR}/media DESTINATION ${CMAKE_BINARY_DIR}/bin)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

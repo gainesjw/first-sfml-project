@@ -2,7 +2,7 @@
 #define __PLAYER_H__
 
 #include <SFML/Graphics.hpp>
-#include "action.h"
+#include "configuration.h"
 
 namespace Player
 {
@@ -17,20 +17,19 @@ namespace Player
 
             template<typename ... Args>
             void setPosition(Args&& ... args) {
-                _shape.setPosition(std::forward<Args>(args)...);
+                _ship.setPosition(std::forward<Args>(args)...);
             }
 
             void processEvents();
             void update(sf::Time deltaTime);
 
             enum PlayerInputs {Up,Left,Right};
-            static void setDefaultInputs();
  
 
         private:
             virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
             
-            sf::RectangleShape  _shape;
+            sf::Sprite          _ship;
             sf::Vector2f        _velocity;
             
             bool _isMoving;
