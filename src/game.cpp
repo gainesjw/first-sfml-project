@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    Game::Game() : _window(sf::VideoMode(800, 600),"project_001")//, _player(150)
+    Game::Game(int x, int y) : _window(sf::VideoMode(x, y),"project_001"), x(x), y(y) //, _player(150)
     {
             //_player.setFillColor(sf::Color::Blue);
             _player.setPosition(100, 100);
@@ -51,6 +51,11 @@ namespace Game
     void Game::update(sf::Time deltaTime)
     {
         _player.update(deltaTime);
+        sf::Vector2f player_pos = _player.getPosition();
+        if(player_pos.x < 0)
+        {
+            player_pos.x = _x;
+        }
     }
 
     void Game::render() {

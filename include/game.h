@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "player.h"
+#include "world.h"
 
 namespace Game
 {
@@ -14,14 +15,16 @@ namespace Game
         void update(sf::Time deltaTime);
         void render();
 
-        sf::RenderWindow _window;
+        World::World _world;
         Player::Player  _player;
 
     public:
         Game(const Game&) = delete;
         Game& operator=(const Game&) = delete;
-        Game();
-        void run(int minimum_frame_per_seconds);
+
+        Game(int x=800, y=600);
+        
+        void run(int minimumFPS);
 
     };    
 
