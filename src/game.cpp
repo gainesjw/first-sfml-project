@@ -5,7 +5,7 @@ namespace Game
     Game::Game() : _window(sf::VideoMode(800, 600),"project_001")//, _player(150)
     {
             //_player.setFillColor(sf::Color::Blue);
-            _player.setPosition(10, 20);
+            _player.setPosition(100, 100);
     }
     
     void Game::run(int minimum_frame_per_seconds)
