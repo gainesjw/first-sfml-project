@@ -23,7 +23,7 @@ namespace World
         bool isCollide(const Entity::Entity& other);
         int size();
 
-        void add(Configuration::Sounds sound_id);
+        void add(Configuration::Configuration::Sounds sound_id);
 
         const std::list<Entity::Entity*> getEntities() const;
         int getX() const;
@@ -34,8 +34,8 @@ namespace World
 
         std::list<Entity::Entity*> _entities;
         std::list<Entity::Entity*> _entities_tmp;
-
         std::list<std::unique_ptr<sf::Sound>> _sounds;
+        
         virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
         const int _x;

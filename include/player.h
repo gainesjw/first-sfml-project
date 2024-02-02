@@ -17,17 +17,20 @@ namespace Player
 
             Player(World::World& world);
 
-
-            void processEvents();
+            virtual bool isCollide(const Entity& other) const;
             virtual void update(sf::Time deltaTime);
 
-            enum PlayerInputs {Up,Left,Right};
+            void processEvents();
+            void shoot();
+            void goToHyperspace();
+
+            virtual void onDestroy();
  
         private:
             bool _isMoving;
             int _rotation;
 
-            static Action::ActionMap<int> _playerInputs;
+            sf::Time _timeSinceLastShoot;
     };
 
 }
