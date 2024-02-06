@@ -11,7 +11,7 @@ namespace Configuration
     int Configuration::level;
     int Configuration::lives;
 
-    Player::Player* Configuration::Player = nullptr;
+    Player::Player* Configuration::Configuration::Player = nullptr;
 
     int Configuration::_score;
     sf::Text Configuration::_txt_score;

@@ -26,21 +26,23 @@ namespace Entity
                 _sprite.setPosition(std::forward<Args>(args) ...);
             }
 
+            virtual bool isAlive() const;
+            virtual void onDestroy();
+
             virtual void update(sf::Time) = 0;
             const sf::Vector2f& getPosition() const;
-            const sf::FloatRect& getBounds() const;
 
         protected:
             friend class Player;
             friend class Enemy;
 
-            sf::Vector2f    _velocity;
+            sf::Vector2f    _impulse;
             sf::Sprite      _sprite;
             World::World& _world;
             bool _alive;
 
         private:
-        virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+            virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
     };
 }
 

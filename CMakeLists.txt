@@ -14,6 +14,7 @@ include(CTest)
 enable_testing()
 
 set(SOURCES
+    src/shoot.cpp
     src/entity.cpp
     src/world.cpp
     src/action.cpp

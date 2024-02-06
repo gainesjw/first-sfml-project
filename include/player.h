@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "configuration.h"
 #include "entity.h"
+#include "random.h"
 
 namespace Player
 {

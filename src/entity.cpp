@@ -2,7 +2,7 @@
 
 namespace Entity
 {
-    Entity::Entity(Configuration::Configuration::Textures texture_id, World::World& world) : _world(world)
+    Entity::Entity(Configuration::Configuration::Textures texture_id, World::World& world) : _world(world), _alive(true)
     {
         sf::Texture& texture = Configuration::Configuration::textures.get(texture_id);
         _sprite.setTexture(texture);
@@ -14,14 +14,19 @@ namespace Entity
 
     }
 
+    bool Entity::isAlive() const
+    {
+        return _alive;
+    }
+
+    void Entity::onDestroy()
+    {
+        _alive = false;
+    }
+
     const sf::Vector2f& Entity::getPosition() const
     {
         return _sprite.getPosition();
-    }
-
-    const sf::FloatRect& Entity::getBounds() const
-    {
-        return _sprite.getGlobalBounds();
     }
 
     void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
