@@ -13,32 +13,34 @@ namespace World
     {
         public:
 
-        World(const World&) = delete;
-        World& operator=(const World&) = delete;
-        World(float x, float y);
-        ~World();
+            World(const World&) = delete;
+            World& operator=(const World&) = delete;
+            World(float x, float y);
+            ~World();
 
-        void add(Entity::Entity* entity);
-        void clear();
-        bool isCollide(const Entity::Entity& other);
-        int size();
+            void add(Entity::Entity* entity);
+            void clear();
+            bool isCollide(const Entity::Entity& other);
+            int size();
 
-        void add(Configuration::Configuration::Sounds sound_id);
+            void add(Configuration::Configuration::Sounds sound_id);
 
-        const std::list<Entity::Entity*> getEntities() const;
-        int getX() const;
-        int getY() const;
-        void update(sf::Time deltaTime);
+            const std::list<Entity::Entity*> getEntities() const;
+            int getX() const;
+            int getY() const;
+            void update(sf::Time deltaTime);
 
         private:
 
-        std::list<Entity::Entity*> _entities;
-        std::list<Entity::Entity*> _entities_tmp;
-        std::list<std::unique_ptr<sf::Sound>> _sounds;
-        
-        virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+            std::list<Entity::Entity*> _entities;
+            std::list<Entity::Entity*> _entities_tmp;
+            std::list<std::unique_ptr<sf::Sound>> _sounds;
+            
+            virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
-        const int _x;
-        const int _y;
+            const int _x;
+            const int _y;
     };
 }
+
+#endif

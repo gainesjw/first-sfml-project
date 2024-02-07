@@ -27,7 +27,7 @@ namespace Shoot
             ShootPlayer& operator=(const ShootPlayer&) = delete;
 
             ShootPlayer(Player::Player& from);
-            virtual bool isCollide(const Entity::Entity& other);
+            virtual bool isCollide(const Entity& other);
     };
 
     class SmallSaucer;
@@ -38,7 +38,7 @@ namespace Shoot
             ShootSaucer& operator=(const ShootSaucer&) = delete;
 
             ShootSaucer(SmallSaucer& from);
-            virtual bool isCollide(const Entity::Entity& other) const;
+            virtual bool isCollide(const Entity& other) const;
     };
 }
 

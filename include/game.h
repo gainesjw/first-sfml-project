@@ -4,28 +4,34 @@
 #include <SFML/Graphics.hpp>
 #include "player.h"
 #include "world.h"
+#include "random.h"
+#include "configuration.h"
 
 namespace Game
 {
 
     class Game
     {
-    private:
-        void processEvents();
-        void update(sf::Time deltaTime);
-        void render();
+        public:
+            Game(const Game&) = delete;
+            Game& operator=(const Game&) = delete;
 
-        World::World _world;
-        Player::Player  _player;
+            Game(int x=800, int y=600);
+            
+            void run(int minimumFPS);
+            void initLevel();
 
-    public:
-        Game(const Game&) = delete;
-        Game& operator=(const Game&) = delete;
+        private:
+            void processEvents();
+            void update(sf::Time deltaTime);
+            void render();
+            void reset();
 
-        Game(int x=800, y=600);
-        
-        void run(int minimumFPS);
+            World::World _world;
+            sf::RenderWindow _window;
 
+            sf::Time   _nextSaucer;
+            sf::Text   _txt;
     };    
 
 }
