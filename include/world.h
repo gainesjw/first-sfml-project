@@ -9,7 +9,7 @@
 
 namespace World
 {
-    class World : sf::Drawable
+    class World : public sf::Drawable
     {
         public:
 

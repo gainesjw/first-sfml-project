@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-
+#include "random.h"
 #include "action.h"
 #include "resourcemanager.h"
 

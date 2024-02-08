@@ -5,6 +5,8 @@
 #include "configuration.h"
 #include "entity.h"
 #include "random.h"
+#include "world.h"
+#include "collision.h"
 
 namespace Player
 {

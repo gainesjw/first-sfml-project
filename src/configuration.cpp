@@ -25,7 +25,7 @@ namespace Configuration
         initMusics();
         initPlayerInputs();
 
-        rand_init();
+        Random::rand_init();
         _txt_score.setFont(fonts.get(Fonts::GUI));
         _txt_score.setCharacterSize(24);
 

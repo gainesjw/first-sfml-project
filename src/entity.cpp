@@ -2,7 +2,7 @@
 
 namespace Entity
 {
-    Entity::Entity(Configuration::Configuration::Textures texture_id, World::World& world) : _world(world), _alive(true)
+    Entity::Entity(Configuration::Configuration::Textures texture_id, World::World& _world) : _world(_world), _alive(true)
     {
         sf::Texture& texture = Configuration::Configuration::textures.get(texture_id);
         _sprite.setTexture(texture);
