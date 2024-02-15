@@ -14,6 +14,7 @@ include(CTest)
 enable_testing()
 
 set(SOURCES
+    src/saucer.cpp
     src/enemy.cpp
     src/collision.cpp
     src/shoot.cpp
